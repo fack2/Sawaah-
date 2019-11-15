@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* SawaahTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SawaahTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -16,6 +15,18 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* SawaahTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SawaahTests.m */; };
+		0B716B93256C4149B9380496 /* Signika-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7EC0604E9E0486AB98A61C0 /* Signika-Bold.ttf */; };
+		7C386F983F184FE8BDD7782C /* Signika-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7279F62C993845E6A6CB6C84 /* Signika-Light.ttf */; };
+		1FE666F722F14E36864E383A /* Signika-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD59599B1E5B401299B3D552 /* Signika-Regular.ttf */; };
+		87FCDEBEBDA043DC8DCD0371 /* Signika-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A54ABE16099748C3BFE30F03 /* Signika-SemiBold.ttf */; };
+		2D7A69FEFE9A4304AD867E7E /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1507FDCA6C5475CA73E9E80 /* Ubuntu-Bold.ttf */; };
+		B85755B31FC34CC1A8A2D75F /* Ubuntu-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D3E06CB965240AB8E9CFE1B /* Ubuntu-BoldItalic.ttf */; };
+		96CBA374F87A4026BB043751 /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AC167A2148546D6A4F77420 /* Ubuntu-Italic.ttf */; };
+		A739ABA9E45B459B8A42C69F /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68BA096A99E84408B12034A5 /* Ubuntu-Light.ttf */; };
+		996AEE3A08CB4E2BAC645250 /* Ubuntu-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85B3FD33ED984D19BAA03F22 /* Ubuntu-LightItalic.ttf */; };
+		D4E9D84BE2B34CCBAA7BC244 /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DF00C9507C64FD393E0B626 /* Ubuntu-Medium.ttf */; };
+		92AAC439E9F9420A93FDB63E /* Ubuntu-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28A105BFD51F40329850897D /* Ubuntu-MediumItalic.ttf */; };
+		A87661D2913D4428A71467BC /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C538AD576D23459E85E1A80C /* Ubuntu-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +62,18 @@
 		2D02E4901E0B4A5D006451C7 /* Sawaah-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sawaah-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		D7EC0604E9E0486AB98A61C0 /* Signika-Bold.ttf */ = {isa = PBXFileReference; name = "Signika-Bold.ttf"; path = "../src/assets/fonts/Signika/Signika-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7279F62C993845E6A6CB6C84 /* Signika-Light.ttf */ = {isa = PBXFileReference; name = "Signika-Light.ttf"; path = "../src/assets/fonts/Signika/Signika-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AD59599B1E5B401299B3D552 /* Signika-Regular.ttf */ = {isa = PBXFileReference; name = "Signika-Regular.ttf"; path = "../src/assets/fonts/Signika/Signika-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A54ABE16099748C3BFE30F03 /* Signika-SemiBold.ttf */ = {isa = PBXFileReference; name = "Signika-SemiBold.ttf"; path = "../src/assets/fonts/Signika/Signika-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C1507FDCA6C5475CA73E9E80 /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Bold.ttf"; path = "../src/assets/fonts/Ubuntu/Ubuntu-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5D3E06CB965240AB8E9CFE1B /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Ubuntu-BoldItalic.ttf"; path = "../src/assets/fonts/Ubuntu/Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4AC167A2148546D6A4F77420 /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Italic.ttf"; path = "../src/assets/fonts/Ubuntu/Ubuntu-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		68BA096A99E84408B12034A5 /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Light.ttf"; path = "../src/assets/fonts/Ubuntu/Ubuntu-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		85B3FD33ED984D19BAA03F22 /* Ubuntu-LightItalic.ttf */ = {isa = PBXFileReference; name = "Ubuntu-LightItalic.ttf"; path = "../src/assets/fonts/Ubuntu/Ubuntu-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0DF00C9507C64FD393E0B626 /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Medium.ttf"; path = "../src/assets/fonts/Ubuntu/Ubuntu-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		28A105BFD51F40329850897D /* Ubuntu-MediumItalic.ttf */ = {isa = PBXFileReference; name = "Ubuntu-MediumItalic.ttf"; path = "../src/assets/fonts/Ubuntu/Ubuntu-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C538AD576D23459E85E1A80C /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Regular.ttf"; path = "../src/assets/fonts/Ubuntu/Ubuntu-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +163,7 @@
 				00E356EF1AD99517003FC87E /* SawaahTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				AD88FDBD66964968BD9A2A54 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -156,6 +180,26 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		AD88FDBD66964968BD9A2A54 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				D7EC0604E9E0486AB98A61C0 /* Signika-Bold.ttf */,
+				7279F62C993845E6A6CB6C84 /* Signika-Light.ttf */,
+				AD59599B1E5B401299B3D552 /* Signika-Regular.ttf */,
+				A54ABE16099748C3BFE30F03 /* Signika-SemiBold.ttf */,
+				C1507FDCA6C5475CA73E9E80 /* Ubuntu-Bold.ttf */,
+				5D3E06CB965240AB8E9CFE1B /* Ubuntu-BoldItalic.ttf */,
+				4AC167A2148546D6A4F77420 /* Ubuntu-Italic.ttf */,
+				68BA096A99E84408B12034A5 /* Ubuntu-Light.ttf */,
+				85B3FD33ED984D19BAA03F22 /* Ubuntu-LightItalic.ttf */,
+				0DF00C9507C64FD393E0B626 /* Ubuntu-Medium.ttf */,
+				28A105BFD51F40329850897D /* Ubuntu-MediumItalic.ttf */,
+				C538AD576D23459E85E1A80C /* Ubuntu-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -240,7 +284,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -293,6 +337,18 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				0B716B93256C4149B9380496 /* Signika-Bold.ttf in Resources */,
+				7C386F983F184FE8BDD7782C /* Signika-Light.ttf in Resources */,
+				1FE666F722F14E36864E383A /* Signika-Regular.ttf in Resources */,
+				87FCDEBEBDA043DC8DCD0371 /* Signika-SemiBold.ttf in Resources */,
+				2D7A69FEFE9A4304AD867E7E /* Ubuntu-Bold.ttf in Resources */,
+				B85755B31FC34CC1A8A2D75F /* Ubuntu-BoldItalic.ttf in Resources */,
+				96CBA374F87A4026BB043751 /* Ubuntu-Italic.ttf in Resources */,
+				A739ABA9E45B459B8A42C69F /* Ubuntu-Light.ttf in Resources */,
+				996AEE3A08CB4E2BAC645250 /* Ubuntu-LightItalic.ttf in Resources */,
+				D4E9D84BE2B34CCBAA7BC244 /* Ubuntu-Medium.ttf in Resources */,
+				92AAC439E9F9420A93FDB63E /* Ubuntu-MediumItalic.ttf in Resources */,
+				A87661D2913D4428A71467BC /* Ubuntu-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
