@@ -1,0 +1,33 @@
+{
+  "name": "Sawaah-",
+  "version": "1.0.0",
+  "description": "An app used to book a flight ticket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fack2/Sawaah-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fack2/Sawaah-/issues"
+  },
+  "homepage": "https://github.com/fack2/Sawaah-#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bcrypt": "^3.0.6",
+    "cookie-parser": "^1.4.4",
+    "env2": "^2.2.2",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.12.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "nodemon": "^1.19.4"
+  }
+}
