@@ -1,10 +1,10 @@
 import React from 'react';
 import {ButtonWrapper, ButtonText} from './index.style';
 
-const Button = ({BtnText, onButtonPress}) => {
+const Button = ({ButtonTextValue, onButtonPress}) => {
   return (
     <ButtonWrapper onPress={onButtonPress}>
-      <ButtonText>{BtnText}</ButtonText>
+      <ButtonText>{ButtonTextValue}</ButtonText>
     </ButtonWrapper>
   );
 };
