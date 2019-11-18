@@ -1,16 +1,23 @@
-const fs = require('fs')
+const fs = require("fs");
 
-const dbConnection = require('./db_connection')
+const dbConnection = require("./db_connection");
 
-const sql = fs.readFileSync(`${__dirname}/db_build.sql`).toString()
+const sql = fs.readFileSync(`${__dirname}/db_build.sql`).toString();
+const fakeData = fs.readFileSync(`${__dirname}/fakeData.sql`).toString();
 
-const runDbBuild = cb => dbConnection.query(sql, cb)
+const runDbBuild = cb => dbConnection.query(sql, cb);
 
-runDbBuild((err, res) => {
+dbConnection.query(sql, (err, res) => {
+  console.log("database is connected successfully");
+  dbConnection.query(fakeData, (err2, res2) => {
+    console.log("data inserted successfully");
+    if (err2) {
+      throw err2;
+    }
+  });
   if (err) {
-    throw err
+    throw err;
   }
-  return res
-})
+});
 
-module.exports = runDbBuild
+module.exports = runDbBuild;
