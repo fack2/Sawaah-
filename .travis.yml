@@ -7,5 +7,5 @@ env:
   - BUILD_DIR=server
 
 script:
-  - if [ "$BUILD_DIR" = "client" ]; then cd $BUILD_DIR && cd Sawaah && npm install && npm run build; fi
+  - if [ "$BUILD_DIR" = "client" ]; then cd $BUILD_DIR && cd Sawaah && npm install && npm run android; fi
   - if [ "$BUILD_DIR" = "server" ]; then cd $BUILD_DIR && npm install; fi
