@@ -12,19 +12,11 @@ import {
   DeparturelTimeImg,
   ArraivalTimeImg,
 } from './index.style';
-import NavBar from './../NavBar';
-import Button from './../Button';
 
 class SearchResult extends React.Component {
-  onPress = () => {
-    const {navigate} = this.props.navigation;
-    return navigate('BuyTicket');
-  };
-
   render() {
     return (
       <View>
-        <NavBar />
         <Header>The available tickets:</Header>
         <Container>
           <TicketCard>
@@ -45,7 +37,6 @@ class SearchResult extends React.Component {
             <FromToCountryText>Palestine to Barcelona</FromToCountryText>
           </TicketCard>
         </Container>
-        <Button onButtonPress={this.onPress} ButtonTextValue='Book flight' />
       </View>
     );
   }
