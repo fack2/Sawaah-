@@ -1,17 +1,16 @@
 import React from 'react';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import {SafeAreaView, StatusBar} from 'react-native';
 
 import reducer from './src/reducers';
+import ScreenNavigator from './ScreenNavigator';
 
 const store = createStore(reducer);
 
 const App = () => {
   return (
     <Provider store={store}>
-      <StatusBar />
-      <SafeAreaView></SafeAreaView>
+      <ScreenNavigator />
     </Provider>
   );
 };
