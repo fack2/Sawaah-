@@ -1,5 +1,5 @@
 import React from 'react';
-import {Linking} from 'react-native';
+
 import {
   NavBarWrapper,
   NavBarTextWrapper,
