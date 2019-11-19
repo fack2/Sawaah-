@@ -9,6 +9,11 @@ const NavigationStack = createStackNavigator(
     Destination: {screen: Destination},
   },
   {initialRouteName: 'LandingPage'},
+  {
+    navigationOptions: {
+      headershown: false,
+    },
+  },
 );
 
 const ScreenNavigator = createAppContainer(NavigationStack);
