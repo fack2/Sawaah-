@@ -8,9 +8,9 @@ import Profile from './src/Components/Layout/Profile';
 const NavigationStack = createStackNavigator(
   {
     LandingPage: {screen: LandingPage},
-    Profile: {screen: Profile},
     Destination: {screen: Destination},
     SearchResult: {screen: SearchResult},
+    Profile: {screen: Profile},
   },
   {initialRouteName: 'LandingPage'},
 );
