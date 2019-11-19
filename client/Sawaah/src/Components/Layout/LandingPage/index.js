@@ -2,9 +2,12 @@ import React from 'react';
 import {Container, LandingPageImg, Describtion} from './index.style';
 import NavBar from '../../SharedComponent/NavBar';
 import Button from '../../SharedComponent/Button';
-import {View} from 'react-native';
 
 class LandingPage extends React.Component {
+  static navigationOptions = {
+    header: null,
+  };
+
   onPress = () => {
     const {navigate} = this.props.navigation;
     return navigate('Destination');
@@ -12,7 +15,7 @@ class LandingPage extends React.Component {
 
   render() {
     return (
-      <View>
+      <>
         <NavBar />
         <Container>
           <LandingPageImg
@@ -27,7 +30,7 @@ class LandingPage extends React.Component {
           </Describtion>
         </Container>
         <Button ButtonTextValue='Get Started' onButtonPress={this.onPress} />
-      </View>
+      </>
     );
   }
 }
