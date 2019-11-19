@@ -3,10 +3,12 @@ import {createStackNavigator} from 'react-navigation-stack';
 import LandingPage from './src/Components/Layout/LandingPage';
 import Destination from './src/Components/Layout/Destination';
 import SearchResult from './src/Components/SharedComponent/SearchResult';
+import Profile from './src/Components/Layout/Profile';
 
 const NavigationStack = createStackNavigator(
   {
     LandingPage: {screen: LandingPage},
+    Profile: {screen: Profile},
     Destination: {screen: Destination},
     SearchResult: {screen: SearchResult},
   },
