@@ -13,7 +13,7 @@ const NavBar = () => {
     <NavBarWrapper>
       <NavBarLogoWrapper>
         <NavBarLogo
-          source={require('s./../../../assets/images/airplane-logo.png')}
+          source={require('./../../../assets/images/airplane-logo.png')}
         />
       </NavBarLogoWrapper>
 
