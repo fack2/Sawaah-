@@ -1,33 +1,33 @@
-export const countrySelector = country => {
+export const countrySelector = payload => {
   return {
     type: 'SELECT_COUNTRY',
-    country,
+    payload,
   };
 };
 
-export const dateSelector = date => {
+export const dateSelector = payload => {
   return {
     type: 'SELECT_DATE',
-    date,
+    payload,
   };
 };
-export const classTypeSelector = classType => {
+export const classTypeSelector = payload => {
   return {
     type: 'SELECT_CLASSTYPE',
-    classType,
+    payload,
   };
 };
 
-export const adultsNumberChange = adultsNumber => {
+export const adultsNumberChange = payload => {
   return {
     type: 'CHANGE_ADULTS_NUMBER',
-    adultsNumber,
+    payload,
   };
 };
 
-export const childrenNumberChange = childrenNumber => {
+export const childrenNumberChange = payload => {
   return {
     type: 'CHANGE_CHILDREN_NUMBER',
-    childrenNumber,
+    payload,
   };
 };
