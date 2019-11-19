@@ -20,14 +20,16 @@ CREATE TABLE users (
     country VARCHAR (50) NOT NULL,
     date DATE NOT NULL,
     flight_class VARCHAR (50),
-    user_id  INT
+    user_id integer REFERENCES users (user_id)
+
   );
 
   CREATE TABLE tickets (
     ticket_id SERIAL PRIMARY KEY ,
     departure_time VARCHAR (15) NOT NULL,
     arraival_time VARCHAR (15) NOT NULL,
-    destenation_id INT
+    destenation_id integer REFERENCES destenation (destenation_id)
+
   );
   COMMIT;
   
