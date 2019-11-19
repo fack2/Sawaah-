@@ -1,5 +1,5 @@
 import React from 'react';
-import {Linking} from 'react-native';
+
 import {
   NavBarWrapper,
   NavBarTextWrapper,
@@ -13,7 +13,7 @@ const NavBar = () => {
     <NavBarWrapper>
       <NavBarLogoWrapper>
         <NavBarLogo
-          source={require('./../../../assets/images/airplane-logo.png')}
+          source={require('s./../../../assets/images/airplane-logo.png')}
         />
       </NavBarLogoWrapper>
 
