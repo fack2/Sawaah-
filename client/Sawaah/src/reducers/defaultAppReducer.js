@@ -4,6 +4,8 @@ const initialState = {
   classType: '',
   adultsNumber: '',
   childrenNumber: '',
+  emailInput: '',
+  passwordInput: '',
 };
 
 const defaultAppReducer = (state = initialState, action) => {
@@ -33,7 +35,7 @@ const defaultAppReducer = (state = initialState, action) => {
         ...state,
         childrenNumber: action.payload,
       };
-
+    
     default:
       return state;
   }
