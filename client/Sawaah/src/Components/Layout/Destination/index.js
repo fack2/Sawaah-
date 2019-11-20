@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {ScrollView} from 'react-native';
 
 import {
   countrySelector,
@@ -8,7 +9,7 @@ import {
   classTypeSelector,
   adultsNumberChange,
   childrenNumberChange,
-} from './../../../actions';
+} from '../../../actions/defaultAppActions';
 import Button from './../../SharedComponent/Button';
 import NavBar from './../../SharedComponent/NavBar';
 
@@ -52,7 +53,7 @@ class Destination extends Component {
   render() {
     const {country, date, classType, adultsNumber, childrenNumber} = this.props;
     return (
-      <>
+      <ScrollView>
         <NavBar />
         <PageContainer>
           <PageTitle>Where do you want to fly to?</PageTitle>
@@ -111,7 +112,7 @@ class Destination extends Component {
           </AdultsChildrenBoxes>
           <Button ButtonTextValue="Search" onButtonPress={this.onButtonPress} />
         </PageContainer>
-      </>
+      </ScrollView>
     );
   }
 }
