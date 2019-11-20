@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {ScrollView} from 'react-native';
 
 import {
   PageContainer,
   SignupInformationBoxes,
   SignupInformationText,
   PageTitle,
+  AlreadyHaveAnAccountLinkWrapper,
+  AlreadyHaveAnAccountText,
+  LoginText,
 } from './index.style';
 import Button from './../../SharedComponent/Button';
 
@@ -43,55 +47,76 @@ class Signup extends Component {
     return navigate('Destination');
   };
 
+  AlreadyHaveAnAccountPressHandle = () => {
+    const {navigate} = this.props.navigation;
+    return navigate('Destination');
+  };
+
   render() {
     const {userName, userEmail, userPassword, userConfirmPassword} = this.props;
     return (
-      <PageContainer>
-        <PageTitle>Create an account:</PageTitle>
-        <SignupInformationBoxes>
-          <SignupInformationText
-            placeholder="Name"
-            onChangeText={this.handleNameInputChange}
-            value={userName}
+      <ScrollView>
+        <PageContainer>
+          <PageTitle>Create an account:</PageTitle>
+          <SignupInformationBoxes>
+            <SignupInformationText
+              placeholder="Name"
+              onChangeText={this.handleNameInputChange}
+              value={userName}
+            />
+          </SignupInformationBoxes>
+          <SignupInformationBoxes>
+            <SignupInformationText
+              placeholder="Email"
+              onChangeText={this.handleEmailInputChange}
+              value={userEmail}
+            />
+          </SignupInformationBoxes>
+          <SignupInformationBoxes>
+            <SignupInformationText
+              placeholder="Password"
+              onChangeText={this.handlePasswordInputChange}
+              value={userPassword}
+            />
+          </SignupInformationBoxes>
+          <SignupInformationBoxes>
+            <SignupInformationText
+              placeholder="Confirm Password"
+              onChangeText={this.handleConfirmPasswordInputChange}
+              value={userConfirmPassword}
+            />
+          </SignupInformationBoxes>
+          <Button
+            ButtonTextValue="Sign up"
+            onButtonPress={this.onButtonPress}
           />
-        </SignupInformationBoxes>
 
-        <SignupInformationBoxes>
-          <SignupInformationText
-            placeholder="Email"
-            onChangeText={this.handleEmailInputChange}
-            value={userEmail}
-          />
-        </SignupInformationBoxes>
-
-        <SignupInformationBoxes>
-          <SignupInformationText
-            placeholder="Password"
-            onChangeText={this.handlePasswordInputChange}
-            value={userPassword}
-          />
-        </SignupInformationBoxes>
-
-        <SignupInformationBoxes>
-          <SignupInformationText
-            placeholder="Confirm Password"
-            onChangeText={this.handleConfirmPasswordInputChange}
-            value={userConfirmPassword}
-          />
-        </SignupInformationBoxes>
-
-        <Button ButtonTextValue="Sign up" onButtonPress={this.onButtonPress} />
-      </PageContainer>
+          <AlreadyHaveAnAccountLinkWrapper
+            onPress={this.AlreadyHaveAnAccountPressHandle}>
+            <AlreadyHaveAnAccountText>
+              Already have an account?
+            </AlreadyHaveAnAccountText>
+            <LoginText> Log in</LoginText>
+          </AlreadyHaveAnAccountLinkWrapper>
+        </PageContainer>
+      </ScrollView>
     );
   }
 }
 
 const mapStateToProps = state => {
+  const {
+    userName,
+    userEmail,
+    userPassword,
+    userConfirmPassword,
+  } = state.signupLoginReducer;
+
   return {
-    userName: state.userName,
-    userEmail: state.userEmail,
-    userPassword: state.userPassword,
-    userConfirmPassword: state.userConfirmPassword,
+    userName: userName,
+    userEmail: userEmail,
+    userPassword: userPassword,
+    userConfirmPassword: userConfirmPassword,
   };
 };
 
