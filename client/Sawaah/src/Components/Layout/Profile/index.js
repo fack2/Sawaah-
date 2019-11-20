@@ -1,9 +1,8 @@
 import React from 'react';
 import {
   PageContainer,
-  BackButton,
   TextName,
-  TextEmail,
+  UserPersonalInformation,
   ProfileImg,
   Header,
   Ticket,
@@ -42,28 +41,24 @@ import {
 } from './index.style';
 
 class Profile extends React.Component {
-  // static navigationOptions = {
-  //   header: null,
-  // };
-  onPress = () => {
-    const {navigate} = this.props.navigation;
-    return navigate('LandingPage');
+  static navigationOptions = {
+    headerStyle: {
+      backgroundColor: '#dbbdb4',
+    },
   };
 
   render() {
     return (
       <PageContainer>
-        <BackButton
-          onButtonPress={this.onPress}
-          source={require('./../../../assets/images/left-arrow.svg')}
-        />
         <ProfileImg
           source={require('./../../../assets/images/profileImg.png')}
         />
 
         <TextName>Brianca Davis</TextName>
 
-        <TextEmail>briancadavis@hotmail.com</TextEmail>
+        <UserPersonalInformation>
+          briancadavis@hotmail.com
+        </UserPersonalInformation>
 
         <Header>Your Ticket </Header>
 
