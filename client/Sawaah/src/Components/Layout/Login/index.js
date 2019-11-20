@@ -1,7 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {emailInputChange, passwordInputChange} from './../../../actions';
+import {
+  emailInputChange,
+  passwordInputChange,
+} from './../../../actions/signupLoginActions';
 import {
   PageContainer,
   WelcomeStatement,
@@ -49,6 +52,7 @@ class Login extends React.Component {
             />
           </EmailPasswordContainer>
           <Button ButtonTextValue="LogIn" onButtonPress={this.onPress} />
+          {console.log('ss', emailInput)}
         </PageContainer>
       </>
     );
@@ -66,7 +70,10 @@ const mapDispatchToProps = dispatch => {
 };
 
 const mapStateToProps = state => {
-  return {emailInput: state.emailInput, passwordInput: state.passwordInput};
+  return {
+    emailInput: state.signupLoginReducer.emailInput,
+    passwordInput: state.signupLoginReducer.passwordInput,
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
