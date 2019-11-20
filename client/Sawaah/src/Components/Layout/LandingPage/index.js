@@ -10,7 +10,7 @@ class LandingPage extends React.Component {
 
   onPress = () => {
     const {navigate} = this.props.navigation;
-    return navigate('Destination');
+    return navigate('Signup');
   };
 
   render() {

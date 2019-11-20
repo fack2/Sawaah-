@@ -8,7 +8,7 @@ const initialState = {
   passwordInput: '',
 };
 
-const reducer = (state = initialState, action) => {
+const defaultAppReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SELECT_COUNTRY':
       return {
@@ -51,4 +51,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default defaultAppReducer;
