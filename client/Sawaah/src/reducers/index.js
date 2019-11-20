@@ -4,6 +4,8 @@ const initialState = {
   classType: '',
   adultsNumber: '',
   childrenNumber: '',
+  emailInput: '',
+  passwordInput: '',
 };
 
 const reducer = (state = initialState, action) => {
@@ -32,6 +34,16 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         childrenNumber: action.payload,
+      };
+    case 'ENTER_EMAIL':
+      return {
+        ...state,
+        emailInput: action.payload,
+      };
+    case 'ENTER_PASSWORD':
+      return {
+        ...state,
+        passwordInput: action.payload,
       };
 
     default:
