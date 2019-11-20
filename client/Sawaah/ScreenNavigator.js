@@ -5,6 +5,7 @@ import Signup from './src/Components/Layout/Signup';
 import Destination from './src/Components/Layout/Destination';
 import SearchResult from './src/Components/SharedComponent/SearchResult';
 import Profile from './src/Components/Layout/Profile';
+import Login from './src/Components/Layout/Login';
 
 const NavigationStack = createStackNavigator(
   {
@@ -13,6 +14,7 @@ const NavigationStack = createStackNavigator(
     Destination: {screen: Destination},
     SearchResult: {screen: SearchResult},
     Profile: {screen: Profile},
+    Login: {screen: Login},
   },
   {
     initialRouteName: 'LandingPage',

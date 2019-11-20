@@ -25,3 +25,17 @@ export const signupConfirmPasswordChange = payload => {
     payload,
   };
 };
+
+export const emailInputChange = payload => {
+  return {
+    type: 'ENTER_EMAIL',
+    payload,
+  };
+};
+
+export const passwordInputChange = payload => {
+  return {
+    type: 'ENTER_PASSWORD',
+    payload,
+  };
+};

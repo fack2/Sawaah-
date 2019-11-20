@@ -27,6 +27,16 @@ const signupLoginReducer = (state = initialState, action) => {
         ...state,
         userConfirmPassword: action.payload,
       };
+    case 'ENTER_EMAIL':
+      return {
+        ...state,
+        emailInput: action.payload,
+      };
+    case 'ENTER_PASSWORD':
+      return {
+        ...state,
+        passwordInput: action.payload,
+      };
 
     default:
       return state;

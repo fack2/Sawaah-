@@ -35,3 +35,25 @@ export const SignupInformationText = styled.TextInput`
   font-size: 15.3px;
   padding-left: 7px;
 `;
+
+export const AlreadyHaveAnAccountLinkWrapper = styled.TouchableOpacity`
+  background: white;
+  color: black;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+
+export const AlreadyHaveAnAccountText = styled.Text`
+  font-family: 'Signika';
+  font-size: 10px;
+  color: black;
+  text-align: center;
+`;
+export const LoginText = styled.Text`
+  font-family: 'Signika';
+  font-size: 10px;
+  color: blue;
+  text-align: center;
+`;
