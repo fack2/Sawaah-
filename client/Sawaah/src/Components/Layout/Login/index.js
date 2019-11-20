@@ -1,4 +1,7 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {emailInputChange, passwordInputChange} from './../../../actions';
 import {
   PageContainer,
   WelcomeStatement,
@@ -6,15 +9,26 @@ import {
   EmailPasswordContainer,
   Email,
   Password,
-  ButtonWrapper,
-  LogInButton,
 } from './index.style';
+import Button from '../../SharedComponent/Button';
 
 class Login extends React.Component {
   static navigationOptions = {
     header: null,
   };
+
+  onPress = () => {
+    const {navigate} = this.props.navigation;
+    return navigate('Destination');
+  };
+
   render() {
+    const {
+      emailInput,
+      passwordInput,
+      emailInputChange,
+      passwordInputChange,
+    } = this.props;
     return (
       <>
         <PageContainer>
@@ -23,16 +37,36 @@ class Login extends React.Component {
             Please fill your personal information to log in
           </EnterStatement>
           <EmailPasswordContainer>
-            <Email placeholder='Email' />
-            <Password placeholder='Password' />
+            <Email
+              placeholder="Email"
+              value={emailInput}
+              onChangeText={emailInputChange}
+            />
+            <Password
+              placeholder="Password"
+              value={passwordInput}
+              onChangeText={passwordInputChange}
+            />
           </EmailPasswordContainer>
-          <ButtonWrapper>
-            <LogInButton>Login</LogInButton>
-          </ButtonWrapper>
+          <Button ButtonTextValue="LogIn" onButtonPress={this.onPress} />
         </PageContainer>
       </>
     );
   }
 }
 
-export default Login;
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    {
+      emailInputChange,
+      passwordInputChange,
+    },
+    dispatch,
+  );
+};
+
+const mapStateToProps = state => {
+  return {emailInput: state.emailInput, passwordInput: state.passwordInput};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
