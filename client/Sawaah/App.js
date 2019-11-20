@@ -13,8 +13,6 @@ const rootReducer = combineReducers({
 });
 const store = createStore(rootReducer);
 
-console.log('state', store.getState());
-
 const App = () => {
   return (
     <Provider store={store}>
