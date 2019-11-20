@@ -70,11 +70,10 @@ const mapDispatchToProps = dispatch => {
   );
 };
 
-const mapStateToProps = state => {
-  const {emailInput, passwordInput} = state.signupLoginReducer;
+const mapStateToProps = ({signupLoginReducer: {emailInput, passwordInput}}) => {
   return {
-    emailInput: emailInput,
-    passwordInput: passwordInput,
+    emailInput,
+    passwordInput,
   };
 };
 
