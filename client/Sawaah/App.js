@@ -1,11 +1,19 @@
 import React from 'react';
-import {createStore} from 'redux';
+import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 
-import reducer from './src/reducers';
+import defaultAppReducer from './src/reducers/defaultAppReducer';
+
+import signupLoginReducer from './src/reducers/signupLoginReducer';
 import ScreenNavigator from './ScreenNavigator';
 
-const store = createStore(reducer);
+const rootReducer = combineReducers({
+  defaultAppReducer,
+  signupLoginReducer,
+});
+const store = createStore(rootReducer);
+
+console.log('state', store.getState());
 
 const App = () => {
   return (
