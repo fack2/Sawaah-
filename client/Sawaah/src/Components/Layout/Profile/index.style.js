@@ -10,25 +10,15 @@ export const PageContainer = styled.View`
   height: 800px;
 `;
 
-export const BackButton = styled.Image`
-  width: 19px;
-  height: 17px;
-`;
-
 export const ProfileImg = styled.Image`
   height: 80px;
   width: 80px;
   border-radius: 50px;
 `;
 
-export const TextName = styled.Text`
+export const UserPersonalInformation = styled.Text`
   padding: 15px 0 0 0;
   font-family: 'Signika';
-`;
-
-export const TextEmail = styled.Text`
-  font-family: 'Signika';
-  padding: 10px 0 0 0;
 `;
 
 export const Header = styled.Text`
