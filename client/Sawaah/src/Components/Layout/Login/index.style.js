@@ -23,7 +23,7 @@ export const EnterStatement = styled.Text`
   line-height: 14px;
   height: 60px;
   margin: 5px 0 20px 0;
-  padding: 15px 20px 0 47px;
+  padding: 15px 20px 0 35px;
 `;
 
 export const EmailPasswordContainer = styled.View`
@@ -35,34 +35,17 @@ export const EmailPasswordContainer = styled.View`
 `;
 export const Email = styled.TextInput`
   border: 0.5px solid black;
-  height: 40px;
-  width: 250px;
-  border-radius: 10px;
+  height: 55px;
+  width: 285px;
+  border-radius: 7px;
   margin: 0 0 30px 0;
   padding: 0 0 0 18px;
 `;
 export const Password = styled.TextInput`
   border: 0.5px solid black;
-  height: 40px;
-  width: 250px;
-  border-radius: 10px;
+  height: 55px;
+  width: 285px;
+  border-radius: 7px;
   margin: 0 0 30px 0;
   padding: 0 0 0 18px;
-`;
-export const ButtonWrapper = styled.TouchableOpacity`
-  display: flex;
-  flex-direction: row;
-  align-self: center;
-  align-items: center;
-  justify-content: center;
-  width: 165px;
-  height: 50px;
-  background: #2e5d6a;
-  border-radius: 10px;
-`;
-
-export const LogInButton = styled.Text`
-  font-family: 'Signika';
-  font-size: 17px;
-  color: #ffffff;
 `;
