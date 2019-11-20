@@ -40,7 +40,7 @@ export const AdultsChildrenBoxes = styled.View`
   align-items: center;
 `;
 
-export const AdultsChildrenText = styled.TextInput`
+export const AdultsChildrenText = styled.Text`
   font-family: 'Ubuntu';
   font-size: 15.3px;
   padding-left: 7px;
