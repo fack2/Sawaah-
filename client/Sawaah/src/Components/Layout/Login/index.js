@@ -14,7 +14,7 @@ import {
   Password,
 } from './index.style';
 import Button from '../../SharedComponent/Button';
-
+import {ScrollView} from 'react-native';
 class Login extends React.Component {
   static navigationOptions = {
     header: null,
@@ -34,26 +34,27 @@ class Login extends React.Component {
     } = this.props;
     return (
       <>
-        <PageContainer>
-          <WelcomeStatement>Welcome Back!</WelcomeStatement>
-          <EnterStatement>
-            Please fill your personal information to log in
-          </EnterStatement>
-          <EmailPasswordContainer>
-            <Email
-              placeholder="Email"
-              value={emailInput}
-              onChangeText={emailInputChange}
-            />
-            <Password
-              placeholder="Password"
-              value={passwordInput}
-              onChangeText={passwordInputChange}
-            />
-          </EmailPasswordContainer>
-          <Button ButtonTextValue="LogIn" onButtonPress={this.onPress} />
-          {console.log('ss', emailInput)}
-        </PageContainer>
+        <ScrollView>
+          <PageContainer>
+            <WelcomeStatement>Welcome Back!</WelcomeStatement>
+            <EnterStatement>
+              Please fill your personal information to log in
+            </EnterStatement>
+            <EmailPasswordContainer>
+              <Email
+                placeholder="Email"
+                value={emailInput}
+                onChangeText={emailInputChange}
+              />
+              <Password
+                placeholder="Password"
+                value={passwordInput}
+                onChangeText={passwordInputChange}
+              />
+            </EmailPasswordContainer>
+            <Button ButtonTextValue="LogIn" onButtonPress={this.onPress} />
+          </PageContainer>
+        </ScrollView>
       </>
     );
   }
