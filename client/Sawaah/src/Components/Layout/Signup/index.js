@@ -49,7 +49,7 @@ class Signup extends Component {
 
   AlreadyHaveAnAccountPressHandle = () => {
     const {navigate} = this.props.navigation;
-    return navigate('Destination');
+    return navigate('Login');
   };
 
   render() {
@@ -132,4 +132,7 @@ const mapDispatchToProps = dispatch => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Signup);
