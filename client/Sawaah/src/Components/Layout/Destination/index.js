@@ -57,8 +57,8 @@ class Destination extends Component {
     this.props.selectClassType(classType);
   };
 
-  handleAdultsNumberChange = destinationAdultsNumber => {
-    this.props.changeAdultsNumber(destinationAdultsNumber);
+  handleAdultsNumberChange = adultsNumber => {
+    this.props.changeAdultsNumber(adultsNumber);
   };
 
   handleChildrenNumberChange = childrenNumber => {
@@ -76,7 +76,7 @@ class Destination extends Component {
       country,
       date,
       classType,
-      destinationAdultsNumber,
+      adultsNumber,
       childrenNumber,
       dateDropdownListEnabled,
       classDropdownListEnabled,
@@ -152,7 +152,7 @@ class Destination extends Component {
                 <AdultsChildrenText>Adults</AdultsChildrenText>
                 <AdultsChildrenNumberBox>
                   <AdultsChildrenNumberText
-                    value={destinationAdultsNumber}
+                    value={adultsNumber}
                     onChangeText={this.handleAdultsNumberChange}
                     placeholder="0"
                   />
@@ -192,7 +192,7 @@ const mapStateToProps = ({
     country,
     date,
     classType,
-    destinationAdultsNumber,
+    adultsNumber,
     childrenNumber,
     dateDropdownListEnabled,
     classDropdownListEnabled,
@@ -203,7 +203,7 @@ const mapStateToProps = ({
     country,
     date,
     classType,
-    destinationAdultsNumber,
+    adultsNumber,
     childrenNumber,
     dateDropdownListEnabled,
     classDropdownListEnabled,
