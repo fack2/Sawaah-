@@ -8,6 +8,8 @@ const initialState = {
   dateDropdownListEnabled: false,
   classDropdownListEnabled: false,
   ticketResults: [],
+  emailInput: '',
+  passwordInput: '',
 };
 
 const defaultAppReducer = (state = initialState, action) => {
