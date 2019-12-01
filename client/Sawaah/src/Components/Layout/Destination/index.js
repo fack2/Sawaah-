@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {ScrollView} from 'react-native';
+import {ScrollView, ActivityIndicator} from 'react-native';
 
 import {
-  countrySelector,
-  dateSelector,
-  classTypeSelector,
-  adultsNumberChange,
-  childrenNumberChange,
+  getDestinationCountries,
+  selectCountry,
+  selectDate,
+  selectClassType,
+  changeAdultsNumber,
+  changeChildrenNumber,
+  enableDateDropdownList,
+  enableClassDropdownList,
 } from '../../../actions/defaultAppActions';
+
 import Button from './../../SharedComponent/Button';
 import NavBar from './../../SharedComponent/NavBar';
 
@@ -22,119 +26,201 @@ import {
   AdultsChildrenText,
   AdultsChildrenNumberBox,
   AdultsChildrenNumberText,
+  PageLoaderContainer,
 } from './index.style';
 
 class Destination extends Component {
-  handleCountryChange = country => {
-    this.props.countrySelector(country);
+  static navigationOptions = {
+    header: null,
   };
 
-  handleDateChange = date => {
-    this.props.dateSelector(date);
+  componentDidMount() {
+    this.props.getDestinationCountries();
+  }
+
+  handleCountrySelection = country => {
+    const {dateDropdownListEnabled, classDropdownListEnabled} = this.props;
+
+    this.props.selectCountry(country);
+
+    this.props.enableDateDropdownList(dateDropdownListEnabled);
+
+    this.props.enableClassDropdownList(classDropdownListEnabled);
   };
 
-  handleClassTypeChange = classType => {
-    this.props.classTypeSelector(classType);
+  handleDateSelection = (date, classDropdownListEnabled) => {
+    this.props.selectDate(date);
+    this.props.enableClassDropdownList(classDropdownListEnabled);
   };
 
-  handleAdultsNumberChange = adultsNumber => {
-    this.props.adultsNumberChange(adultsNumber);
+  handleClassTypeSelection = classType => {
+    this.props.selectClassType(classType);
+  };
+
+  handleAdultsNumberChange = destinationAdultsNumber => {
+    this.props.changeAdultsNumber(destinationAdultsNumber);
   };
 
   handleChildrenNumberChange = childrenNumber => {
-    this.props.childrenNumberChange(childrenNumber);
+    this.props.changeChildrenNumber(childrenNumber);
   };
 
-  onButtonPress = () => {
+  onSearchButtonPress = () => {
     const {navigate} = this.props.navigation;
     return navigate('SearchResult');
   };
 
   render() {
-    const {country, date, classType, adultsNumber, childrenNumber} = this.props;
+    const {
+      destinationCountries,
+      country,
+      date,
+      classType,
+      destinationAdultsNumber,
+      childrenNumber,
+      dateDropdownListEnabled,
+      classDropdownListEnabled,
+    } = this.props;
+
     return (
-      <ScrollView>
-        <NavBar />
-        <PageContainer>
-          <PageTitle>Where do you want to fly to?</PageTitle>
-          <DropdownListsBox>
-            <DropdownLists
-              selectedValue={country}
-              onValueChange={this.handleCountryChange}>
-              <DropdownLists.Item label="Country" value="Country" />
-              <DropdownLists.Item label="France" value="France" />
-              <DropdownLists.Item label="Italy" value="Italy" />
-            </DropdownLists>
-          </DropdownListsBox>
-          <DropdownListsBox>
-            <DropdownLists
-              selectedValue={date}
-              onValueChange={this.handleDateChange}>
-              <DropdownLists.Item label="Date" value="Date" />
-              <DropdownLists.Item
-                label="Monday 25th of Nov"
-                value="Monday 25th of Nov"
+      <>
+        {destinationCountries ? (
+          <ScrollView>
+            <NavBar />
+            <PageContainer>
+              <PageTitle>Where do you want to fly to?</PageTitle>
+              <DropdownListsBox>
+                <DropdownLists
+                  selectedValue={country}
+                  onValueChange={this.handleCountrySelection}>
+                  <DropdownLists.Item label="Country" value="Country" />
+                  {destinationCountries.map(ele => {
+                    return (
+                      <DropdownLists.Item
+                        key={ele.destination_id}
+                        label={ele.country}
+                        value={ele.country}
+                      />
+                    );
+                  })}
+                </DropdownLists>
+              </DropdownListsBox>
+
+              <DropdownListsBox>
+                <DropdownLists
+                  selectedValue={date}
+                  onValueChange={this.handleDateSelection}
+                  enabled={dateDropdownListEnabled}>
+                  <DropdownLists.Item label="Date" value="Date" />
+                  {destinationCountries ? (
+                    destinationCountries
+                      .filter(ele => ele.country === country)
+                      .map(ele => {
+                        return (
+                          <DropdownLists.Item
+                            key={ele.destination_id}
+                            label={ele.date}
+                            value={ele.date}
+                          />
+                        );
+                      })
+                  ) : (
+                    <></>
+                  )}
+                </DropdownLists>
+              </DropdownListsBox>
+
+              <DropdownListsBox>
+                <DropdownLists
+                  selectedValue={classType}
+                  onValueChange={this.handleClassTypeSelection}
+                  enabled={classDropdownListEnabled}>
+                  <DropdownLists.Item label="Class" value="Class" />
+                  <DropdownLists.Item label="First Class" value="First Class" />
+                  <DropdownLists.Item
+                    label="Business Class"
+                    value="Business Class"
+                  />
+                  <DropdownLists.Item
+                    label="Economy Class"
+                    value="Economy Class"
+                  />
+                </DropdownLists>
+              </DropdownListsBox>
+
+              <AdultsChildrenBoxes>
+                <AdultsChildrenText>Adults</AdultsChildrenText>
+                <AdultsChildrenNumberBox>
+                  <AdultsChildrenNumberText
+                    value={destinationAdultsNumber}
+                    onChangeText={this.handleAdultsNumberChange}
+                    placeholder="0"
+                  />
+                </AdultsChildrenNumberBox>
+              </AdultsChildrenBoxes>
+
+              <AdultsChildrenBoxes>
+                <AdultsChildrenText>Children</AdultsChildrenText>
+                <AdultsChildrenNumberBox>
+                  <AdultsChildrenNumberText
+                    value={childrenNumber}
+                    onChangeText={this.handleChildrenNumberChange}
+                    placeholder="0"
+                  />
+                </AdultsChildrenNumberBox>
+              </AdultsChildrenBoxes>
+
+              <Button
+                ButtonTextValue="Search"
+                onButtonPress={this.onSearchButtonPress}
               />
-            </DropdownLists>
-          </DropdownListsBox>
-          <DropdownListsBox>
-            <DropdownLists
-              selectedValue={classType}
-              onValueChange={this.handleClassTypeChange}>
-              <DropdownLists.Item label="Class" value="Class" />
-              <DropdownLists.Item
-                label="Business Class"
-                value="Business Class"
-              />
-              <DropdownLists.Item label="First Class" value="First Class" />
-              <DropdownLists.Item label="Economy Class" value="Economy Class" />
-            </DropdownLists>
-          </DropdownListsBox>
-          <AdultsChildrenBoxes>
-            <AdultsChildrenText>Adults</AdultsChildrenText>
-            <AdultsChildrenNumberBox>
-              <AdultsChildrenNumberText
-                value={adultsNumber}
-                onChangeText={this.handleAdultsNumberChange}
-                placeholder="0"
-              />
-            </AdultsChildrenNumberBox>
-          </AdultsChildrenBoxes>
-          <AdultsChildrenBoxes>
-            <AdultsChildrenText>Children</AdultsChildrenText>
-            <AdultsChildrenNumberBox>
-              <AdultsChildrenNumberText
-                value={childrenNumber}
-                onChangeText={this.handleChildrenNumberChange}
-                placeholder="0"
-              />
-            </AdultsChildrenNumberBox>
-          </AdultsChildrenBoxes>
-          <Button ButtonTextValue="Search" onButtonPress={this.onButtonPress} />
-        </PageContainer>
-      </ScrollView>
+            </PageContainer>
+          </ScrollView>
+        ) : (
+          <PageLoaderContainer>
+            <ActivityIndicator size="large" color="blue" />
+          </PageLoaderContainer>
+        )}
+      </>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({
+  defaultAppReducer: {
+    destinationCountries,
+    country,
+    date,
+    classType,
+    destinationAdultsNumber,
+    childrenNumber,
+    dateDropdownListEnabled,
+    classDropdownListEnabled,
+  },
+}) => {
   return {
-    country: state.country,
-    date: state.date,
-    classType: state.classType,
-    adultsNumber: state.adultsNumber,
-    childrenNumber: state.childrenNumber,
+    destinationCountries,
+    country,
+    date,
+    classType,
+    destinationAdultsNumber,
+    childrenNumber,
+    dateDropdownListEnabled,
+    classDropdownListEnabled,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
-      countrySelector,
-      dateSelector,
-      classTypeSelector,
-      adultsNumberChange,
-      childrenNumberChange,
+      getDestinationCountries,
+      selectCountry,
+      selectDate,
+      selectClassType,
+      changeAdultsNumber,
+      changeChildrenNumber,
+      enableDateDropdownList,
+      enableClassDropdownList,
     },
     dispatch,
   );
