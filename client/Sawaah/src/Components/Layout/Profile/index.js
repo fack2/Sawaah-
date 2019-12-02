@@ -8,36 +8,13 @@ import {
   Ticket,
   CompanyLogo,
   CardTicket,
-  FromToContainer,
-  FromText,
-  FromAirport,
-  TextAirportFrom,
+  SharedContainer,
+  BaseContainer,
+  DisplayText,
+  ResultText,
+  SubContainer,
   AirplanImg,
-  TextAirportTo,
-  ToText,
-  ToAirport,
-  DepartureArrivalContainer,
-  DepartureTimeContainer,
-  DepartureText,
-  DepartureTime,
-  ArrivalTimeContainer,
-  ArrivalText,
-  ArrivalTime,
-  ClassSeatContainer,
-  ClassTypeContainer,
-  ClassText,
-  ClassTypeText,
-  SeatNumberContainer,
-  SeatText,
-  PositionText,
   BarCodeImg,
-  FlightNoGateContainer,
-  FlightNoContainer,
-  FlightNoText,
-  FlightNumber,
-  GateNoContainer,
-  GateText,
-  GateNumber,
 } from './index.style';
 
 class Profile extends React.Component {
@@ -63,49 +40,57 @@ class Profile extends React.Component {
             source={require('./../../../assets/images/PA-logo.gif')}
           />
           <Ticket source={require('./../../../assets/images/profile.png')} />
-          <FromToContainer>
-            <TextAirportFrom>
-              <FromText>From</FromText>
-              <FromAirport>PNA</FromAirport>
-            </TextAirportFrom>
-            <AirplanImg
-              source={require('./../../../assets/images/plane.png')}
-            />
-            <TextAirportTo>
-              <ToText>To</ToText>
-              <ToAirport>BNA</ToAirport>
-            </TextAirportTo>
-          </FromToContainer>
-          <DepartureArrivalContainer>
-            <DepartureTimeContainer>
-              <DepartureText>Departure</DepartureText>
-              <DepartureTime>4:30 pm</DepartureTime>
-            </DepartureTimeContainer>
-            <ArrivalTimeContainer>
-              <ArrivalText>Arrival</ArrivalText>
-              <ArrivalTime>11:00 am</ArrivalTime>
-            </ArrivalTimeContainer>
-          </DepartureArrivalContainer>
-          <ClassSeatContainer>
-            <ClassTypeContainer>
-              <ClassText>Class</ClassText>
-              <ClassTypeText>Business</ClassTypeText>
-            </ClassTypeContainer>
-            <SeatNumberContainer>
-              <SeatText>Seat</SeatText>
-              <PositionText>B4</PositionText>
-            </SeatNumberContainer>
-          </ClassSeatContainer>
-          <FlightNoGateContainer>
-            <FlightNoContainer>
-              <FlightNoText>Flight No</FlightNoText>
-              <FlightNumber>S65</FlightNumber>
-            </FlightNoContainer>
-            <GateNoContainer>
-              <GateText>Gate</GateText>
-              <GateNumber>10L</GateNumber>
-            </GateNoContainer>
-          </FlightNoGateContainer>
+          <SharedContainer>
+            <BaseContainer>
+              <SubContainer>
+                <DisplayText>From</DisplayText>
+                <ResultText>PNA</ResultText>
+              </SubContainer>
+              <AirplanImg
+                source={require('./../../../assets/images/plane.png')}
+              />
+              <SubContainer>
+                <DisplayText>To</DisplayText>
+                <ResultText>BNA</ResultText>
+              </SubContainer>
+            </BaseContainer>
+          </SharedContainer>
+          <SharedContainer>
+            <BaseContainer>
+              <SubContainer>
+                <DisplayText>Departure</DisplayText>
+                <ResultText>4:30 pm</ResultText>
+              </SubContainer>
+              <SubContainer>
+                <DisplayText>Arrival</DisplayText>
+                <ResultText>11:00 am</ResultText>
+              </SubContainer>
+            </BaseContainer>
+          </SharedContainer>
+          <SharedContainer>
+            <BaseContainer>
+              <SubContainer>
+                <DisplayText>Class</DisplayText>
+                <ResultText>Business</ResultText>
+              </SubContainer>
+              <SubContainer>
+                <DisplayText>Seat</DisplayText>
+                <ResultText>B4</ResultText>
+              </SubContainer>
+            </BaseContainer>
+          </SharedContainer>
+          <SharedContainer>
+            <BaseContainer>
+              <SubContainer>
+                <DisplayText>Flight No</DisplayText>
+                <ResultText>S65</ResultText>
+              </SubContainer>
+              <SubContainer>
+                <DisplayText>Gate</DisplayText>
+                <ResultText>10L</ResultText>
+              </SubContainer>
+            </BaseContainer>
+          </SharedContainer>
           <BarCodeImg
             source={require('./../../../assets/images/barcode.png')}
           />
