@@ -5,8 +5,8 @@ export const PageContainer = styled.View`
   flex-direction: column;
   background: #dbbdb4;
   align-items: center;
-  padding: 35px 0 0 0;
-  height: 800px;
+  padding-top: 35px;
+  height: 750px;
 `;
 export const ProfileImg = styled.Image`
   height: 80px;
@@ -15,7 +15,7 @@ export const ProfileImg = styled.Image`
 `;
 
 export const UserPersonalInformation = styled.Text`
-  padding: 15px 0 0 0;
+  padding-top: 15px;
   font-family: 'Signika';
 `;
 
@@ -33,68 +33,58 @@ export const CardTicket = styled.View`
 `;
 
 export const Ticket = styled.Image`
-  width: 298px;
-  height: 420px;
-  align-self: center;
-  margin: 20px 0 0 0;
+  position: absolute;
+  margin-top: 5%;
   border-radius: 10px;
 `;
 
 export const CompanyLogo = styled.Image`
   position: absolute;
   z-index: 1;
-  width: 216px;
-  height: 38px;
+  width: 230px;
+  height: 30px;
   justify-content: center;
-  margin: 34px 0 0 0;
+  margin-top: 8%;
 `;
-export const SharedContainer = styled.View`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1;
-  width: 298px;
-  height: 500px;
-  margin: -420px 0 0 0;
-  /* background: red; */
-  /* padding: 0 0 -50px 0; */
+export const TicketInfoContainer = styled.View`
+  margin: 21% 0 4% 0;
 `;
 export const BaseContainer = styled.View`
-  position: absolute;
   display: flex;
   flex-direction: row;
-  width: 240px;
   align-items: center;
   justify-content: space-around;
-  margin: 110px 0 0 0;
+  z-index: 1;
+  width: 298px;
+  height: 70px;
 `;
 
 export const SubContainer = styled.View`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const DisplayText = styled.Text`
   font-family: 'Signika';
   font-size: 13px;
-  line-height: 16px;
   color: rgba(0, 0, 0, 0.75);
 `;
 
 export const ResultText = styled.Text`
   font-family: 'Signika';
   font-size: 16px;
-  line-height: 18px;
 `;
 
 export const AirplanImg = styled.Image`
   width: 24px;
   height: 24px;
   transform: rotate(90.3deg);
+  align-self: center;
 `;
 
 export const BarCodeImg = styled.Image`
   width: 190px;
-  height: 55px;
-  margin: -63px 0 0 7px;
+  height: 50px;
+  z-index: 1;
 `;
