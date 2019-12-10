@@ -8,6 +8,7 @@ export const PageContainer = styled.View`
   padding-top: 35px;
   height: 750px;
 `;
+
 export const ProfileImg = styled.Image`
   height: 80px;
   width: 80px;
@@ -15,7 +16,7 @@ export const ProfileImg = styled.Image`
 `;
 
 export const UserPersonalInformation = styled.Text`
-  padding-top: 15px;
+  padding-top: 5px;
   font-family: 'Signika';
 `;
 
@@ -33,9 +34,9 @@ export const CardTicket = styled.View`
 `;
 
 export const Ticket = styled.Image`
-  position: absolute;
   margin-top: 5%;
   border-radius: 10px;
+  position: absolute;
 `;
 
 export const CompanyLogo = styled.Image`
@@ -49,6 +50,7 @@ export const CompanyLogo = styled.Image`
 export const TicketInfoContainer = styled.View`
   margin: 21% 0 4% 0;
 `;
+
 export const BaseContainer = styled.View`
   display: flex;
   flex-direction: row;
@@ -58,7 +60,6 @@ export const BaseContainer = styled.View`
   width: 298px;
   height: 70px;
 `;
-
 export const SubContainer = styled.View`
   display: flex;
   flex-direction: column;
