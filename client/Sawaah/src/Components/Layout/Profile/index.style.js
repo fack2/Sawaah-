@@ -41,7 +41,7 @@ export const Ticket = styled.Image`
 export const CompanyLogo = styled.Image`
   position: absolute;
   z-index: 1;
-  width: 230px;
+  width: 255px;
   height: 30px;
   justify-content: center;
   margin-top: 8%;
