@@ -1,9 +1,7 @@
 const dbConnection = require('./../db_connection');
 
-const getDestinationData = country => {
-  return dbConnection.query('SELECT * FROM destination WHERE country = $1', [
-    country
-  ]);
+const getDestinationData = () => {
+  return dbConnection.query('SELECT * FROM destination');
 };
 
 module.exports = getDestinationData;
