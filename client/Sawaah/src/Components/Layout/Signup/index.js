@@ -47,9 +47,9 @@ class Signup extends Component {
     return navigate('Destination');
   };
 
-  AlreadyHaveAnAccountPressHandle = () => {
+  AlreadyHaveAnAccountPressHandler = () => {
     const {navigate} = this.props.navigation;
-    return navigate('Destination');
+    return navigate('Login');
   };
 
   render() {
@@ -92,7 +92,7 @@ class Signup extends Component {
           />
 
           <AlreadyHaveAnAccountLinkWrapper
-            onPress={this.AlreadyHaveAnAccountPressHandle}>
+            onPress={this.AlreadyHaveAnAccountPressHandler}>
             <AlreadyHaveAnAccountText>
               Already have an account?
             </AlreadyHaveAnAccountText>
@@ -132,4 +132,7 @@ const mapDispatchToProps = dispatch => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Signup);
