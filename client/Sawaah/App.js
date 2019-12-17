@@ -1,6 +1,7 @@
 import React from 'react';
-import {createStore, combineReducers} from 'redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
+import thunk from 'redux-thunk';
 
 import defaultAppReducer from './src/reducers/defaultAppReducer';
 
@@ -11,7 +12,7 @@ const rootReducer = combineReducers({
   defaultAppReducer,
   signupLoginReducer,
 });
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const App = () => {
   return (

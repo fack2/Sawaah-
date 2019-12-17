@@ -18,7 +18,7 @@ export const DropdownListsBox = styled.View`
   border: 1px solid #000000;
   border-radius: 7px;
   background: #ffffff;
-  margin-top: 10px;
+  margin-top: 15px;
   padding-left: 7px;
 `;
 
@@ -33,6 +33,7 @@ export const AdultsChildrenBoxes = styled.View`
   margin-top: 10px;
   padding-left: 7px;
   padding-right: 15px;
+  margin-top: 15px;
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -59,4 +60,11 @@ export const AdultsChildrenNumberText = styled.TextInput`
   padding: 0px 2px;
   font-size: 11px;
   color: gray;
+`;
+
+export const PageLoaderContainer = styled.View`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 `;
