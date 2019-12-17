@@ -10,7 +10,7 @@ CREATE TABLE users (
   first_name VARCHAR (50) NOT NULL,
   last_name VARCHAR (50) NOT NULL,
   card_number INTEGER NOT NULL,
-  experation_date DATE NOT NULL,
+  experation_date VARCHAR NOT NULL,
   security_code VARCHAR (50) NOT NULL
   );
 
@@ -18,8 +18,9 @@ CREATE TABLE users (
   CREATE TABLE destination (
     destination_id SERIAL PRIMARY KEY,
     country VARCHAR (50) NOT NULL,
-    date DATE NOT NULL,
-    user_id integer REFERENCES users (user_id)
+    date VARCHAR NOT NULL,
+    price INTEGER NOT NULL,
+    user_id INTEGER REFERENCES users (user_id)
 
   );
 
@@ -27,7 +28,7 @@ CREATE TABLE users (
     ticket_id SERIAL PRIMARY KEY ,
     departure_time VARCHAR (15) NOT NULL,
     arraival_time VARCHAR (15) NOT NULL,
-    destination_id integer REFERENCES destination (destination_id)
+    destination_id INTEGER REFERENCES destination (destination_id)
 
   );
   COMMIT;
